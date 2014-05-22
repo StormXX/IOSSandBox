@@ -70,6 +70,43 @@
 //    NSArray *subpathArray1=[fileManager subpathsAtPath:testDirectory];
 //    NSLog(@"subPathArray1=====%@",subpathArray1);
     
+//        //切换到当前目录
+//    NSFileManager *fileManager=[NSFileManager defaultManager];
+//    [fileManager changeCurrentDirectoryPath:[dPath stringByExpandingTildeInPath]];
+//    NSString * fileName=@"testDirectory.txt";
+//    NSArray * array=[[NSArray alloc] initWithObjects:@"object1",@"object2",@"object3", nil];
+//    //添加文件
+//    [fileManager createFileAtPath:fileName contents:array attributes:nil];
+//    //删除文件
+//    [fileManager removeItemAtPath:fileName error:nil];
+    
+//     //写入和读取混合数据
+//    NSFileManager *fileManager=[NSFileManager defaultManager];
+//    NSString * fileName=[dPath stringByAppendingPathComponent:@"testFileManager.txt"];
+//    
+//    NSString *tmp=@"nihao hello";
+//    int intData=20;
+//    float floatData=2.2;
+//    
+//    //写入数据
+//    NSMutableData *write=[[NSMutableData alloc] init];
+//    [write appendData:[tmp dataUsingEncoding:NSUTF8StringEncoding]];
+//    [write appendBytes:&intData length:sizeof(intData)];
+//    [write appendBytes:&floatData length:sizeof(floatData)];
+//    
+//    [write writeToFile:fileName atomically:YES];
+//    
+//    //读取数据
+//    int rIntData;
+//    float rFloatData;
+//    NSString *stringData;
+//    
+//    NSData *reader=[NSData dataWithContentsOfFile:fileName];
+//    stringData=[[NSString alloc] initWithData:[reader subdataWithRange:NSMakeRange(0, [tmp length])] encoding:NSUTF8StringEncoding];
+//    [reader getBytes:&rIntData range:NSMakeRange([tmp length], sizeof(intData))];
+//    [reader getBytes:&rFloatData range:NSMakeRange([tmp length]+sizeof(intData), sizeof(floatData))];
+//    
+//    NSLog(@"stringData=%@，intData=%d ,floatData=%f",stringData,rIntData,rFloatData);
     //获取Cache目录
 //    NSArray *CachePath=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 //    NSString *cPath=[CachePath lastObject];
